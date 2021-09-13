@@ -21,6 +21,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import WordComponent from '@/components/WordComponent.vue';
 import Search from '@/components/Search.vue';
 import rawWords from '../gklatwords.json';
+import { Word } from './word';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export function debounce(fn: Function, delay: number): () => void {
@@ -58,24 +59,39 @@ export default class App extends Vue {
     }, 150);
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  get found() {
-    if (!this.search) {
-      return [words[0]];
+  get found(): Word[] {
+    const { search } = this;
+    if (!search) {
+      return [words[Math.floor(Math.random() * words.length)] as Word];
     }
-    console.log('found', this.search);
-    const pattern = new RegExp(`.*${this.search}.*`, 'i');
-    return words.map((w) => {
-      let score = 0;
+    console.log('found', search);
+    const pattern = new RegExp(`.*${search}.*`, 'i');
+    return words
+      .map((w) => {
+        let score = 0;
 
-      const meaningScore = 50 * w.meaning.split(/\s+/).filter((meaning) => pattern.test(meaning)).length;
-      const stemScore = 30 * w.stems.filter((stem) => pattern.test(stem)).length;
-      const examplesScore = 5 * w.examples.filter((eg) => pattern.test(eg)).length;
+        const exactMeaningScore = 50
+          * w.meaning.split(/\s+/).filter((meaning) => meaning === search).length;
+        const exactStemScore = 30 * w.stems.filter((stem) => stem === search).length;
+        const exactExamplesScore = 5 * w.examples.filter((eg) => eg === search).length;
 
-      score = stemScore + meaningScore + examplesScore;
+        const meaningScore = 15
+          * w.meaning.split(/\s+/).filter((meaning) => pattern.test(meaning))
+            .length;
+        const stemScore = 10 * w.stems.filter((stem) => pattern.test(stem)).length;
+        const examplesScore = 1 * w.examples.filter((eg) => pattern.test(eg)).length;
 
-      return { ...w, score };
-    }).filter((w) => w.score > 0).sort((a, b) => (b.score - a.score));
+        score = exactStemScore
+          + exactMeaningScore
+          + exactExamplesScore
+          + stemScore
+          + meaningScore
+          + examplesScore;
+
+        return { ...w, score };
+      })
+      .filter((w) => w.score > 0)
+      .sort((a, b) => b.score - a.score) as Word[];
   }
 
   updateSearch(search: string): void {
