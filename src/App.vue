@@ -13,6 +13,10 @@
         :word="w"
       />
     </div>
+    <footer>
+      Information from <a href="https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English">https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English</a>
+      License: <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">CC BY-SA</a>
+    </footer>
   </main>
 </template>
 
@@ -113,6 +117,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a:link {
+  color: $green;
+}
+a:visited {
+  color: change-color($green, $lightness: 20);
+}
+
 #app {
   margin: 0 auto;
   margin-top: 60px;
@@ -151,5 +162,12 @@ h2.subtitle {
   > * {
     flex: 0 0 auto;
   }
+}
+
+footer {
+  color: #888;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+
 }
 </style>
