@@ -14,8 +14,15 @@
       />
     </div>
     <footer>
-      Information from <a href="https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English">https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English</a>
-      License: <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">CC BY-SA</a>
+      Information from
+      <a
+        href="https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English"
+        >https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English</a
+      >
+      License:
+      <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode"
+        >CC BY-SA</a
+      >
     </footer>
   </main>
 </template>
@@ -132,29 +139,57 @@ a:visited {
 
 header {
   display: flex;
+  flex-flow: column;
   align-items: baseline;
   gap: 1rem;
 }
 h1 {
   font-family: "Cinzel Decorative", serif;
-  font-size: 6rem;
   line-height: 0.8;
-  margin: 1rem 0 2rem 0;
   font-variant: small-caps;
-
+  margin: 0;
   span {
     color: $green;
     font-variant: normal;
-    font-size: 5.2rem;
   }
 }
 h2.subtitle {
   font-family: "Heebo", sans-serif;
-  font-size: 1.8rem;
   letter-spacing: -0.1rem;
   display: inline-block;
   color: #282f38;
+  margin: 0;
 }
+
+@media screen and (min-width: 700px) {
+  h1 {
+    font-size: 4rem;
+    margin: 1rem 0 2rem 0;
+    span {
+      font-size: 3.2rem;
+    }
+  }
+  h2.subtitle {
+    font-size: 1.4rem;
+  }
+  header {
+    flex-flow: row;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: 6rem;
+    margin: 1rem 0 2rem 0;
+    span {
+      font-size: 5.2rem;
+    }
+  }
+  h2.subtitle {
+    font-size: 1.8rem;
+  }
+}
+
 .words {
   display: flex;
   flex-flow: row wrap;
@@ -168,6 +203,5 @@ footer {
   color: #888;
   padding: 1rem 0;
   font-size: 0.85rem;
-
 }
 </style>

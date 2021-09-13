@@ -79,7 +79,7 @@ a {
   margin: 0.5rem;
   overflow: hidden;
   box-shadow: 0 8px 20px -17px rgba(0, 0, 0, 0.8);
-  width: 25%;
+  width: 80%;
 
   &:before {
     content: attr(data-display-language);
@@ -101,5 +101,14 @@ a {
     border-left-color: white;
     border-bottom-color: white;
   }
+
+  @media screen and (min-width: 700px) {
+    width: 33%;
+  }
+
+  @media screen and (min-width: 1000px) {
+    width: 25%;
+  }
+
 }
 </style>
