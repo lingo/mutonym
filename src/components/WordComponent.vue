@@ -12,6 +12,10 @@
       <h3>Meaning</h3>
       <p v-html="word.rawMeaning" />
     </template>
+    <template v-if="word.dictionaryLink">
+      <h3>Etymology</h3>
+      <p v-html="word.dictionaryLink" />
+    </template>
     <template v-if="word.rawExamples">
       <h3>Examples</h3>
       <p v-html="word.rawExamples" />
