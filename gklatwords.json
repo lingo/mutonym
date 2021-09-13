@@ -7889,7 +7889,8 @@
     },
     {
         "stems": [
-            "eiren- (iren"
+            "eiren",
+            "iren"
         ],
         "meaning": "peace",
         "rawStems": "<b>eiren-</b> (<b>iren-</b>)<sup id=\"cite_ref-130\" class=\"reference\"><a href=\"#cite_note-130\">[130]</a></sup>",
@@ -8553,8 +8554,7 @@
     },
     {
         "stems": [
-            "fa",
-            "fa (FA)[153]"
+            "fa"
         ],
         "meaning": "say, speak",
         "rawStems": "<b>fa-</b>, <b>fa</b> (FA)<sup id=\"cite_ref-153\" class=\"reference\"><a href=\"#cite_note-153\">[153]</a></sup>",
@@ -8599,8 +8599,8 @@
         "stems": [
             "fac",
             "fact",
-            "-fect",
-            "-fic- (FAC)[154]"
+            "fect",
+            "fic"
         ],
         "meaning": "do, make",
         "rawStems": "<b>fac-</b>, <b>fact-</b>, <b><span class=\"nowrap\">-fect-</span></b>, <b><span class=\"nowrap\">-fic-</span></b> (FAC)<sup id=\"cite_ref-154\" class=\"reference\"><a href=\"#cite_note-154\">[154]</a></sup>",
@@ -9093,7 +9093,7 @@
         "stems": [
             "fig",
             "fing",
-            "fict- (FIG)[155]"
+            "fict"
         ],
         "meaning": "to form, shape",
         "rawStems": "<b>fig-</b>, <b>fing-</b>, <b>fict-</b> (FIG)<sup id=\"cite_ref-155\" class=\"reference\"><a href=\"#cite_note-155\">[155]</a></sup>",
@@ -9174,7 +9174,7 @@
     {
         "stems": [
             "find",
-            "fiss- (FID)[156]"
+            "fiss"
         ],
         "meaning": "cleave, split",
         "rawStems": "<b>find-</b>, <b>fiss-</b> (FID)<sup id=\"cite_ref-156\" class=\"reference\"><a href=\"#cite_note-156\">[156]</a></sup>",
@@ -9243,7 +9243,7 @@
     {
         "stems": [
             "fl",
-            "fla- (FLA)[157]"
+            "fla"
         ],
         "meaning": "blow",
         "rawStems": "<b>fl-</b>, <b>fla-</b> (FLA)<sup id=\"cite_ref-157\" class=\"reference\"><a href=\"#cite_note-157\">[157]</a></sup>",
@@ -9939,7 +9939,7 @@
     },
     {
         "stems": [
-            "gar- (GAR)[162]"
+            "gar"
         ],
         "meaning": "chatter",
         "rawStems": "<b>gar-</b> (GAR)<sup id=\"cite_ref-162\" class=\"reference\"><a href=\"#cite_note-162\">[162]</a></sup>",
@@ -10159,7 +10159,7 @@
     },
     {
         "stems": [
-            "gen- (GEN)[168]"
+            "gen"
         ],
         "meaning": "beget",
         "rawStems": "<b>gen-</b> (GEN)<sup id=\"cite_ref-168\" class=\"reference\"><a href=\"#cite_note-168\">[168]</a></sup>",
@@ -10231,7 +10231,7 @@
     {
         "stems": [
             "ger",
-            "gest- (GES)[171]"
+            "gest"
         ],
         "meaning": "bear, carry",
         "rawStems": "<b>ger-</b>, <b>gest-</b> (GES)<sup id=\"cite_ref-171\" class=\"reference\"><a href=\"#cite_note-171\">[171]</a></sup>",
@@ -10697,7 +10697,7 @@
         "stems": [
             "grad",
             "gred",
-            "gress- (GRAD)[185]"
+            "gress"
         ],
         "meaning": "walk, step, go",
         "rawStems": "<b>grad-</b>, <b>gred-</b>, <b>gress-</b> (GRAD)<sup id=\"cite_ref-185\" class=\"reference\"><a href=\"#cite_note-185\">[185]</a></sup>",
@@ -22791,7 +22791,7 @@
     {
         "stems": [
             "phil",
-            "-phile[37]"
+            "phile"
         ],
         "meaning": "love, friendship",
         "rawStems": "<b>phil-, -phile</b><sup id=\"cite_ref-37\" class=\"reference\"><a href=\"#cite_note-37\">[37]</a></sup>",
@@ -33171,7 +33171,7 @@
     {
         "stems": [
             "ting",
-            "tinct- (TING)[213]"
+            "tinct"
         ],
         "meaning": "dye, moisten",
         "rawStems": "<b>ting-</b>, <b>tinct-</b> (TING)<sup id=\"cite_ref-214\" class=\"reference\"><a href=\"#cite_note-214\">[213]</a></sup>",
