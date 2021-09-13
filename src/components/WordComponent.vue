@@ -1,17 +1,21 @@
 <template>
   <div
-    class="word"
-    :class="`language-${language.toLowerCase()}`"
+    :class="['word', languageClass]"
     :data-language="language"
+    :data-display-language="languageForDisplay"
     :data-score="word.score"
   >
     <ul class="stems">
       <li v-for="w in word.stems" :key="w">{{ w }}</li>
     </ul>
-    <h3>Meaning</h3>
-    <p v-html="word.rawMeaning" />
-    <h3>Examples</h3>
-    <p v-html="word.rawExamples" />
+    <template v-if="word.rawMeaning">
+      <h3>Meaning</h3>
+      <p v-html="word.rawMeaning" />
+    </template>
+    <template v-if="word.rawExamples">
+      <h3>Examples</h3>
+      <p v-html="word.rawExamples" />
+    </template>
   </div>
 </template>
 
@@ -23,15 +27,27 @@ import { Word } from '../word';
 export default class WordComponent extends Vue {
   @Prop() private word!: Word;
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  get language() {
+  get language() : string {
     return this.word?.language || 'Unknown';
+  }
+
+  get languageClass() : string {
+    const { language } = this;
+    return language.split(/\s+/)[0].replace(/[^a-z0-9]+/g, '-').toLowerCase();
+  }
+
+  get languageForDisplay() : string {
+    const { language } = this;
+    const displayLang = language.split(/\s+/)[0];
+    return displayLang === language ? displayLang : `${displayLang}*`;
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+$green: #42b983;
+
 h3 {
   margin: 40px 0 0;
 }
@@ -45,39 +61,43 @@ li {
   display: inline-block;
   font-style: italic;
   font-size: 1.4rem;
-  &:after { content: ','; }
-  &:last-child:after { content: none; }
+  &:after {
+    content: ",";
+  }
+  &:last-child:after {
+    content: none;
+  }
 }
 a {
-  color: #42b983;
+  color: $green;
 }
 .word {
   position: relative;
-  border: 1px solid rgba(0,0,0,0.4);
+  border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 3px;
   padding: 1.5rem 2rem;
   margin: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 8px 20px -17px rgba(0,0,0,0.8);
+  box-shadow: 0 8px 20px -17px rgba(0, 0, 0, 0.8);
   width: 25%;
 
   &:before {
-    content: attr(data-language);
+    content: attr(data-display-language);
     position: absolute;
     right: 0;
     top: 0;
-    transform: translateX(-50%) rotate(45deg) translateX(50%);
-    text-align: left;
+    transform: translate(50%, 0) rotate(-315deg) translate(-19%, 150%);
+    text-align: center;
     z-index: 10;
     /* background: red; */
   }
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     top: 0;
-    border: 2rem solid change-color(#42b983, $alpha: 0.6);
+    border: 2rem solid change-color($green, $alpha: 0.6);
     border-left-color: white;
     border-bottom-color: white;
   }
